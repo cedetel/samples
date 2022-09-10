@@ -34,3 +34,17 @@ export const MainHeader = styled.main`
   justify-content: end;
   padding: 0 15px;
 `;
+export const TopHeader = styled.main`
+  background-color: #bf75e9;
+  height: 50px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800px;
+  font-size: 22px;
+`;
+
+
+
+

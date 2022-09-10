@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import Loader from 'components/Loader';
-import { GithubCorner, GithubStarButton } from 'components/Github';
+// import { GithubCorner, GithubStarButton } from 'components/Github';
 import Filter from 'components/Filter';
 import Products from 'components/Products';
 import Cart from 'components/Cart';
@@ -9,6 +9,7 @@ import Cart from 'components/Cart';
 import { useProducts } from 'contexts/products-context';
 
 import * as S from './style';
+import Header from 'commons/Header';
 
 function App() {
   const { isFetching, products, fetchProducts } = useProducts();
@@ -21,6 +22,7 @@ function App() {
     <S.Container>
       {isFetching && <Loader />}
       {/* <GithubCorner /> */}
+      <S.TopHeader><img src='./iu-header-logo.webp'alt='logo'/> IU Merchandise <p></p></S.TopHeader>
       <S.TwoColumnGrid>
         <S.Side>
           <Filter />
