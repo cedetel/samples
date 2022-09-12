@@ -1,42 +1,36 @@
-import { useEffect } from 'react';
-
-import Loader from 'components/Loader';
 // import { GithubCorner, GithubStarButton } from 'components/Github';
-import Filter from 'components/Filter';
-import Products from 'components/Products';
 import Cart from 'components/Cart';
-
-import { useProducts } from 'contexts/products-context';
-
 import * as S from './style';
-import Header from 'commons/Header';
+import { Router, Outlet, ReactLocation, Link } from '@tanstack/react-location';
+import Home from 'components/Home/Home';
+import AboutUs from 'components/AboutUs/AboutUs';
+
+const routes = [
+  { path: '/', element: <Home /> },
+  { path: '/about-us', element: <AboutUs /> },
+];
+const location = new ReactLocation();
 
 function App() {
-  const { isFetching, products, fetchProducts } = useProducts();
-
-  useEffect(() => {
-    fetchProducts();
-  }, [fetchProducts]);
-
   return (
-    <S.Container>
-      {isFetching && <Loader />}
-      {/* <GithubCorner /> */}
-      <S.TopHeader><img src='./iu-header-logo.webp'alt='logo'/> IU Merchandise <p></p></S.TopHeader>
-      <S.TwoColumnGrid>
-        <S.Side>
-          <Filter />
-          {/* <GithubStarButton /> */}
-        </S.Side>
-        <S.Main>
-          <S.MainHeader>
-            <p>{products?.length} Product(s) found</p>
-          </S.MainHeader>
-          <Products products={products} />
-        </S.Main>
-      </S.TwoColumnGrid>
-      <Cart />
-    </S.Container>
+    <Router location={location} routes={routes}>
+      <S.Container>
+        {/* <GithubCorner /> */}
+        <S.TopHeader>
+          <img src="./iu-header-logo.webp" alt="logo" />
+          <S.Title>
+            <Link to="/">IURXMAN</Link>
+          </S.Title>
+          <S.Menu>
+            <S.MenuItem>
+              <Link to="about-us">About Us</Link>
+            </S.MenuItem>
+          </S.Menu>
+        </S.TopHeader>
+        <Cart />
+        <Outlet />
+      </S.Container>
+    </Router>
   );
 }
 

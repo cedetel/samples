@@ -34,17 +34,45 @@ export const MainHeader = styled.main`
   justify-content: end;
   padding: 0 15px;
 `;
-export const TopHeader = styled.main`
+export const TopHeader = styled.div`
   background-color: #bf75e9;
   height: 50px;
   color: white;
   display: flex;
-  justify-content: center;
   align-items: center;
   font-weight: 800px;
   font-size: 22px;
 `;
+export const Menu = styled.ul`
+  padding-right: 60px;
+  font-size: 1rem;
+  list-style-type: none;
+`;
+export const MenuItem = styled.li`
+  padding: 10px;
+  display: inline-block;
+  cursor: pointer;
+  & > a {
+    text-decoration: none;
+    color: white;
+  }
+`;
+export const Title = styled.p`
+  flex-grow: 1;
+  text-align: center;
+  margin-right: -140px;
+  & > a {
+    text-decoration: none;
+    color: white;
+  }
+`;
+export const AboutUsContainer = styled.div`
+  text-align: center;
+  padding: 20px 0px;
+`;
 
-
-
-
+export const AboutUsContent = styled.p`
+  text-align: center;
+  padding: 0px 350px;
+  line-height: 2rem;
+`;
