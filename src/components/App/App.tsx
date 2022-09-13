@@ -19,7 +19,7 @@ function App() {
         <S.TopHeader>
           <img src="./iu-header-logo.webp" alt="logo" />
           <S.Title>
-            <Link to="/">IURXMAN</Link>
+            <Link to="/">IURMXAN</Link>
           </S.Title>
           <S.Menu>
             <S.MenuItem>
